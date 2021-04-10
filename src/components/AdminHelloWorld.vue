@@ -3,22 +3,47 @@
 
     <div id="body">
 
-        <div id="header_text">{{title}}</div>
-        <div id="header_text">{{title}}</div>
-        <div id="header_text">{{title}}</div>
-        <div id="header_text">{{title}}</div>
+        <div>
+          <textarea v-model="title" id="Header_edit_textarea" @input="save_title(v-model)"></textarea>
+        </div>
+
 
         <hr class="divider">
 
-        <div id="contents">
-            <table id = "content_table">
+        <div class="contents">
+          <table class = "content_table">
+              <th class="content_table_title">이름</th>
+              <th class="content_table_title">링크</th>
+              <th class="content_table_title">완료</th>
+
+              <tr>
+                <td class="content_table_name"> <textarea label="Label Text" id="name_textarea"></textarea> </td>
+                <td class="content_table_link"> <textarea label="Label Text" id="link_textarea"></textarea> </td>
+                
+                <td class="content_table_button">
+                  <v-icon>mdi-check</v-icon>
+                </td>
+              </tr>
+          </table>
+        </div>
+
+        <br>
+
+        <hr class="divider">
+
+        <div class="contents">
+            <table class = "content_table">
                 <th class="content_table_title">이름</th>
                 <th class="content_table_title">링크</th>
+                <th class="content_table_title">삭제</th>
 
                 <tr v-for="(content, content_index) in user_data" :key="content_index" class="content_table_line">
                     <td class="content_table_name">{{content.name}}</td>
                     <td class="content_table_link">
                         <a v-bind:href="content.link"> {{content.link}} </a>
+                    </td>
+                    <td class="content_table_button">
+                      <v-icon>mdi-trash-can-outline</v-icon>
                     </td>
                 </tr>
             </table>

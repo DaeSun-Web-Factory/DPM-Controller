@@ -7,8 +7,8 @@
 
         <hr class="divider">
 
-        <div id="contents">
-            <table id = "content_table">
+        <div class="contents">
+            <table class = "content_table">
                 <th class="content_table_title">이름</th>
                 <th class="content_table_title">링크</th>
 

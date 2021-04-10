@@ -5,6 +5,14 @@
     font-size: 4em;
 }
 
+#Header_edit_textarea{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4em;
+    color: gray;
+    border-color: black;
+}
+
 
 #header {
     width: 100%; 
@@ -29,7 +37,7 @@
     border: thin solid black;
 }
 
-#contents {
+.contents {
     text-align: center;
     font-size: 2em;
     font-weight: normal;
@@ -37,18 +45,12 @@
     justify-content: center;
 }
 
-#content_table{
-    display:table;
+.content_table{
     width:80%;
 }
 
 .content_table_title{
-    display:table-cell;
     border-bottom: 1px solid #444444;
-}
-
-.content_table_name{
-    display:table-cell;
 }
 
 a { 
@@ -64,7 +66,6 @@ a:visited {
     color: black; 
 }
 
-v-container{
-    margin: 0;
-    padding: 0;
+.content_table_button:hover{
+    background-color: skyblue;
 }
