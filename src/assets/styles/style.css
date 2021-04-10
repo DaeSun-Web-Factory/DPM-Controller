@@ -63,3 +63,8 @@ a:link {
 a:visited { 
     color: black; 
 }
+
+v-container{
+    margin: 0;
+    padding: 0;
+}

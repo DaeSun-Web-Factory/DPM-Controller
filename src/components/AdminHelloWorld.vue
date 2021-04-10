@@ -4,6 +4,9 @@
     <div id="body">
 
         <div id="header_text">{{title}}</div>
+        <div id="header_text">{{title}}</div>
+        <div id="header_text">{{title}}</div>
+        <div id="header_text">{{title}}</div>
 
         <hr class="divider">
 
