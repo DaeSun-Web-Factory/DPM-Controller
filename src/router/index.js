@@ -13,12 +13,12 @@ export const router = new VueRouter({
       {                                                         
         path: '/',
         name: 'Home',
-        component: Admin
+        component: Home
       },
       {
         path: '/admin',
         name: 'admin',
-        component: Home
+        component: Admin
       }
   ]
 });
