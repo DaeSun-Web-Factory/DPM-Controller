@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Admin from '../views/Admin.vue'
+//import Admin from '../views/Admin.vue'
 
 Vue.use(VueRouter);  
+
 export const router = new VueRouter({                             
   mode: 'history',
   base: process.env.BASE_URL,                                             
@@ -17,7 +18,7 @@ export const router = new VueRouter({
       {
         path: '/admin',
         name: 'admin',
-        component: Admin
+        component: () => import('../views/Admin.vue')
       }
   ]
 });
