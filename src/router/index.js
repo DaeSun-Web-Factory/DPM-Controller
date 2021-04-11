@@ -9,12 +9,12 @@ export const router = new VueRouter({
   routes:[                                                      
       //path : url 주소, component : 페이지에 보여질 컴포넌트
       {                                                         
-        path: '/DPM-Controller/home',
+        path: '/home',
         name: 'Home',
         component: Home
       },
       {
-        path: '/DPM-Controller/admin',
+        path: '/admin',
         name: 'admin',
         component: Admin
       }
