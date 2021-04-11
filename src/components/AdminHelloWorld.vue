@@ -17,10 +17,10 @@
               <th class="content_table_title">완료</th>
 
               <tr>
-                <td class="content_table_name"> <textarea label="Label Text" id="name_textarea"></textarea> </td>
-                <td class="content_table_link"> <textarea label="Label Text" id="link_textarea"></textarea> </td>
+                <td class="content_table_name"> <textarea v-model="input_name" id="name_textarea"></textarea> </td>
+                <td class="content_table_link"> <textarea v-model="input_link" id="link_textarea"></textarea> </td>
                 
-                <td class="content_table_button">
+                <td class="content_table_button" @click="add_content()">
                   <v-icon>mdi-check</v-icon>
                 </td>
               </tr>
@@ -42,7 +42,7 @@
                     <td class="content_table_link">
                         <a v-bind:href="content.link"> {{content.link}} </a>
                     </td>
-                    <td class="content_table_button">
+                    <td class="content_table_button" @click="del_content(content_index)">
                       <v-icon>mdi-trash-can-outline</v-icon>
                     </td>
                 </tr>
@@ -58,19 +58,45 @@
 </style>
 
 <script>
-  import users from '../assets/data/users.json'
-  import system from '../assets/data/system.json'
+  //import users from '../assets/data/users.json'
+  //import system from '../assets/data/system.json'
+  //import {eventBus} from "../main"
 
   export default {
     name: 'HelloWorld',
 
     data: () => ({
-      user_data: users.users,
+      user_data: [],
       title: "",
+      input_name : "",
+      input_link : "",
     }),
     methods: {
-      save_title() {
-        localStorage.setItem(this.title, this.title);
+      save_title(){
+        localStorage.setItem("title", this.title);
+      },
+      save_contents(){
+        localStorage.setItem("user_data", JSON.stringify(this.user_data));
+      },
+      order_contents(){
+        this.user_data.sort((a, b) => (a.name > b.name) ? 1 : -1);
+        this.save_contents();
+      },
+      add_content(){
+        this.user_data.push({"name": this.input_name, "link": this.input_link});
+        this.order_contents();
+      },
+      del_content(content_index){
+        this.user_data.splice(content_index, 1);
+        this.order_contents();
+      }
+    },
+    mounted() {
+      if (localStorage.title) {
+        this.title = localStorage.title;
+      }
+      if (localStorage.user_data) {
+        this.user_data = JSON.parse(localStorage.user_data);
       }
     }
   }

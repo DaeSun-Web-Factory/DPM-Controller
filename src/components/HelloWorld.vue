@@ -30,15 +30,36 @@
 </style>
 
 <script>
-  import users from '../assets/data/users.json'
-  import system from '../assets/data/system.json'
+  //import users from '../assets/data/users.json'
+  //import system from '../assets/data/system.json'
+  //import {eventBus} from "../main"
 
   export default {
     name: 'HelloWorld',
 
-    data: () => ({
-      user_data: users.users,
-      title: system.title,
-    }),
+    data () {
+      return {
+        user_data: [],
+        title: "",
+      }
+     
+    },
+
+    mounted() {
+      if (localStorage.title) {
+        this.title = localStorage.title;
+      }
+      if (localStorage.user_data) {
+        this.user_data = JSON.parse(localStorage.user_data);
+      }
+    },
+    watch: {
+      title(newtitle) {
+        localStorage.title = newtitle;
+      },
+      user_data(new_user_data) {
+        localStorage.user_data = JSON.stringify(new_user_data);
+      }
+    }
   }
 </script>

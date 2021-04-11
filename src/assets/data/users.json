@@ -2,7 +2,6 @@
     "users":[
         {"name": "송대선", "link": "http://www.google.com"},
         {"name": "권하정", "link": "http://www.naver.com"},
-        {"name": "이규현", "link": "http://www.daum.net"},
-        {"name": "이하은", "link": "http://www.kakao.com"}
+        {"name": "이규현", "link": "http://www.daum.net"}
     ]
 }
