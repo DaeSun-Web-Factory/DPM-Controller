@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-//import Admin from '../views/Admin.vue'
+import Admin from '../views/Admin.vue'
 
 Vue.use(VueRouter);  
 
@@ -13,12 +13,12 @@ export const router = new VueRouter({
       {                                                         
         path: '/',
         name: 'Home',
-        component: Home
+        component: Admin
       },
       {
         path: '/admin',
         name: 'admin',
-        component: () => import('../views/Admin.vue')
+        component: Home
       }
   ]
 });
