@@ -4,7 +4,7 @@
     <div id="body">
 
         <div>
-          <textarea v-model="title" id="Header_edit_textarea" @input="save_title(v-model)"></textarea>
+          <textarea v-model="title" id="Header_edit_textarea" @input="save_title()"></textarea>
         </div>
 
 
@@ -66,7 +66,12 @@
 
     data: () => ({
       user_data: users.users,
-      title: system.title,
+      title: "",
     }),
+    methods: {
+      save_title() {
+        localStorage.setItem(this.title, this.title);
+      }
+    }
   }
 </script>
