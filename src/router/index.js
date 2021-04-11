@@ -5,16 +5,17 @@ import Admin from '../views/Admin.vue'
 
 Vue.use(VueRouter);  
 export const router = new VueRouter({                             
-  mode: 'history',                                              
+  mode: 'history',
+  base: process.env.BASE_URL,                                             
   routes:[                                                      
       //path : url 주소, component : 페이지에 보여질 컴포넌트
       {                                                         
-        path: '/DPM-Controller/',
+        path: '/',
         name: 'Home',
         component: Home
       },
       {
-        path: '/DPM-Controller/admin',
+        path: '/admin',
         name: 'admin',
         component: Admin
       }
